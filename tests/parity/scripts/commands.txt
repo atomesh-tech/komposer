@@ -1,0 +1,18 @@
+install --no-progress
+run-script show-args a "b c"
+show-args a "b c"
+run-script falsy
+run-script stopper
+greet you
+run-script greet
+run-script tool x
+run-script slow
+run-script missing-class
+dump-autoload
+-v run-script show-args a
+run-script ref-args -- a
+ref-args a
+ref-plain a
+show-args
+-v reinstall psr/log
+remove psr/log --no-progress

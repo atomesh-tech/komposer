@@ -43,5 +43,10 @@ lto = "thin"
 codegen-units = 4
 strip = true
 
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
 [target.'cfg(target_env = "musl")'.dependencies]
 mimalloc = "0.1.52"
