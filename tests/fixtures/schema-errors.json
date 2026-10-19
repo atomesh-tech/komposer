@@ -1,0 +1,750 @@
+{
+ "anonymous-repo-name": {
+  "doc": {
+   "repositories": [
+    {
+     "type": "composer",
+     "url": "https://x",
+     "name": "x"
+    }
+   ]
+  },
+  "lax": [],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required"
+  ]
+ },
+ "archive-string": {
+  "doc": {
+   "archive": {
+    "exclude": "x"
+   }
+  },
+  "lax": [
+   "archive.exclude : String value found, but an array is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "archive.exclude : String value found, but an array is required"
+  ]
+ },
+ "author-email": {
+  "doc": {
+   "authors": [
+    {
+     "name": "x",
+     "email": "not-an-email"
+    }
+   ]
+  },
+  "lax": [
+   "authors[0].email : Invalid email"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "authors[0].email : Invalid email"
+  ]
+ },
+ "bin-ints": {
+  "doc": {
+   "bin": [
+    1,
+    2
+   ]
+  },
+  "lax": [
+   "bin[0] : Integer value found, but a string is required",
+   "bin[1] : Integer value found, but a string is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "bin[0] : Integer value found, but a string is required",
+   "bin[1] : Integer value found, but a string is required"
+  ]
+ },
+ "email-one-letter-tld": {
+  "doc": {
+   "authors": [
+    {
+     "name": "x",
+     "email": "a@b.c",
+     "homepage": "mailto:x"
+    }
+   ]
+  },
+  "lax": [
+   "authors[0].homepage : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "authors[0].homepage : Invalid URL format"
+  ]
+ },
+ "empty-array-objects": {
+  "doc": {
+   "require-dev": [],
+   "provide": {},
+   "autoload": []
+  },
+  "lax": [
+   "require-dev : Array value found, but an object is required",
+   "autoload : Array value found, but an object is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "require-dev : Array value found, but an object is required",
+   "autoload : Array value found, but an object is required"
+  ]
+ },
+ "extra-int": {
+  "doc": {
+   "extra": 5
+  },
+  "lax": [
+   "extra : Integer value found, but an object or an array is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "extra : Integer value found, but an object or an array is required"
+  ]
+ },
+ "float-timeout": {
+  "doc": {
+   "config": {
+    "process-timeout": 1.5
+   }
+  },
+  "lax": [
+   "config.process-timeout : Double value found, but an integer is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "config.process-timeout : Double value found, but an integer is required"
+  ]
+ },
+ "funding": {
+  "doc": {
+   "funding": [
+    {
+     "type": "x",
+     "url": "not url"
+    }
+   ]
+  },
+  "lax": [
+   "funding[0].url : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "funding[0].url : Invalid URL format"
+  ]
+ },
+ "homepage-uri": {
+  "doc": {
+   "homepage": "not a url"
+  },
+  "lax": [
+   "homepage : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "homepage : Invalid URL format"
+  ]
+ },
+ "keywords-string": {
+  "doc": {
+   "keywords": "a"
+  },
+  "lax": [
+   "keywords : String value found, but an array is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "keywords : String value found, but an array is required"
+  ]
+ },
+ "license-int": {
+  "doc": {
+   "license": 5
+  },
+  "lax": [
+   "license : Integer value found, but a string or an array is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "license : Integer value found, but a string or an array is required"
+  ]
+ },
+ "lock-bad": {
+  "doc": {
+   "packages": [
+    {
+     "name": "x/y",
+     "version": 1
+    }
+   ],
+   "packages-dev": [],
+   "aliases": "x"
+  },
+  "lock": [
+   "content-hash : The property content-hash is required",
+   "packages[0].version : Integer value found, but a string is required",
+   "aliases : String value found, but an array is required"
+  ]
+ },
+ "lock-empty": {
+  "doc": {},
+  "lock": [
+   "content-hash : The property content-hash is required",
+   "packages : The property packages is required",
+   "packages-dev : The property packages-dev is required"
+  ]
+ },
+ "lock-package-fields": {
+  "doc": {
+   "packages": [
+    {
+     "name": "x/y",
+     "version": "1.0.0",
+     "type": 5,
+     "require": "a"
+    }
+   ],
+   "packages-dev": [],
+   "aliases": [],
+   "minimum-stability": "x",
+   "stability-flags": [],
+   "prefer-stable": "no",
+   "prefer-lowest": false,
+   "content-hash": 5
+  },
+  "lock": [
+   "content-hash : Integer value found, but a string is required",
+   "packages[0].type : Integer value found, but a string is required",
+   "packages[0].require : String value found, but an object is required",
+   "stability-flags : Array value found, but an object is required",
+   "prefer-stable : String value found, but a boolean is required"
+  ]
+ },
+ "name-pattern": {
+  "doc": {
+   "name": "Foo/Bar"
+  },
+  "lax": [
+   "name : Does not match the regex pattern ^[a-z0-9]([_.-]?[a-z0-9]+)*/[a-z0-9](([_.]|-{1,2})?[a-z0-9]+)*$"
+  ],
+  "strict": [
+   "description : The property description is required",
+   "name : Does not match the regex pattern ^[a-z0-9]([_.-]?[a-z0-9]+)*/[a-z0-9](([_.]|-{1,2})?[a-z0-9]+)*$"
+  ]
+ },
+ "non-object-root": {
+  "doc": [
+   1,
+   2
+  ],
+  "lax": [
+   "Array value found, but an object is required"
+  ],
+  "strict": [
+   "Array value found, but an object is required"
+  ]
+ },
+ "numeric-string-priority": {
+  "doc": {
+   "php-ext": {
+    "priority": "5"
+   }
+  },
+  "lax": [
+   "php-ext.priority : String value found, but an integer is required",
+   "php-ext.priority : Must have a minimum value greater than or equal to 10"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "php-ext.priority : String value found, but an integer is required",
+   "php-ext.priority : Must have a minimum value greater than or equal to 10"
+  ]
+ },
+ "package-repo": {
+  "doc": {
+   "repositories": [
+    {
+     "type": "package",
+     "package": {
+      "name": "a/b"
+     }
+    }
+   ]
+  },
+  "lax": [
+   "repositories[0].url : The property url is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"composer\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"vcs\",\"github\",\"git\",\"gitlab\",\"bitbucket\",\"git-bitbucket\",\"hg\",\"fossil\",\"perforce\",\"svn\",\"forgejo\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"path\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories[0].package : Object value found, but an array is required",
+   "repositories[0].package.version : The property version is required",
+   "repositories[0].package : Failed to match exactly one schema",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0] : Must contain no more than 1 properties",
+   "repositories[0].type : String value found, but a boolean is required",
+   "repositories[0].type : Does not have a value in the enumeration [false]",
+   "repositories[0].package : Object value found, but a boolean is required",
+   "repositories[0].package : Does not have a value in the enumeration [false]"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "repositories[0].url : The property url is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"composer\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"vcs\",\"github\",\"git\",\"gitlab\",\"bitbucket\",\"git-bitbucket\",\"hg\",\"fossil\",\"perforce\",\"svn\",\"forgejo\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"path\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories[0].package : Object value found, but an array is required",
+   "repositories[0].package.version : The property version is required",
+   "repositories[0].package : Failed to match exactly one schema",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0] : Must contain no more than 1 properties",
+   "repositories[0].type : String value found, but a boolean is required",
+   "repositories[0].type : Does not have a value in the enumeration [false]",
+   "repositories[0].package : Object value found, but a boolean is required",
+   "repositories[0].package : Does not have a value in the enumeration [false]"
+  ]
+ },
+ "php-ext-families": {
+  "doc": {
+   "php-ext": {
+    "os-families": [
+     "linux"
+    ],
+    "os-families-exclude": [
+     "windows"
+    ]
+   }
+  },
+  "lax": [
+   "php-ext : Matched a schema which it should not",
+   "php-ext : Failed to match all schemas"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "php-ext : Matched a schema which it should not",
+   "php-ext : Failed to match all schemas"
+  ]
+ },
+ "php-ext": {
+  "doc": {
+   "php-ext": {
+    "priority": 5,
+    "os-families": [],
+    "download-url-method": 5
+   }
+  },
+  "lax": [
+   "php-ext.priority : Must have a minimum value greater than or equal to 10",
+   "php-ext.download-url-method : Integer value found, but an array is required",
+   "php-ext.download-url-method : Integer value found, but a string is required",
+   "php-ext.download-url-method : Does not have a value in the enumeration [\"composer-default\",\"pre-packaged-source\",\"pre-packaged-binary\"]",
+   "php-ext.download-url-method : Failed to match exactly one schema",
+   "php-ext.os-families : There must be a minimum of 1 items in the array, 0 found"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "php-ext.priority : Must have a minimum value greater than or equal to 10",
+   "php-ext.download-url-method : Integer value found, but an array is required",
+   "php-ext.download-url-method : Integer value found, but a string is required",
+   "php-ext.download-url-method : Does not have a value in the enumeration [\"composer-default\",\"pre-packaged-source\",\"pre-packaged-binary\"]",
+   "php-ext.download-url-method : Failed to match exactly one schema",
+   "php-ext.os-families : There must be a minimum of 1 items in the array, 0 found"
+  ]
+ },
+ "platform-int": {
+  "doc": {
+   "config": {
+    "platform": {
+     "php": 8
+    }
+   }
+  },
+  "lax": [
+   "config.platform.php : Integer value found, but a string or a boolean is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "config.platform.php : Integer value found, but a string or a boolean is required"
+  ]
+ },
+ "policy": {
+  "doc": {
+   "config": {
+    "policy": {
+     "ignore-x": true,
+     "advisories": "nope"
+    }
+   }
+  },
+  "lax": [
+   "config.policy.ignore-x : Matched a schema which it should not",
+   "config.policy.advisories : String value found, but an object is required",
+   "config.policy.advisories : String value found, but a boolean is required",
+   "config.policy.advisories : Failed to match exactly one schema"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "config.policy.ignore-x : Matched a schema which it should not",
+   "config.policy.advisories : String value found, but an object is required",
+   "config.policy.advisories : String value found, but a boolean is required",
+   "config.policy.advisories : Failed to match exactly one schema"
+  ]
+ },
+ "psr4-int": {
+  "doc": {
+   "autoload": {
+    "psr-4": {
+     "A\\": 5
+    }
+   }
+  },
+  "lax": [
+   "autoload.psr-4.A\\ : Integer value found, but a string or an array is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "autoload.psr-4.A\\ : Integer value found, but a string or an array is required"
+  ]
+ },
+ "repo-map": {
+  "doc": {
+   "repositories": {
+    "packagist.org": false,
+    "foo": {
+     "type": "composer",
+     "url": 5
+    }
+   }
+  },
+  "lax": [
+   "repositories.foo.url : Integer value found, but a string is required",
+   "repositories.foo.type : Does not have a value in the enumeration [\"vcs\",\"github\",\"git\",\"gitlab\",\"bitbucket\",\"git-bitbucket\",\"hg\",\"fossil\",\"perforce\",\"svn\",\"forgejo\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"path\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories.foo.package : The property package is required",
+   "repositories.foo.type : Does not have a value in the enumeration [\"package\"]",
+   "repositories.foo : Failed to match at least one schema",
+   "repositories.foo : Failed to match all schemas",
+   "repositories.foo : Object value found, but a boolean is required",
+   "repositories.foo : Does not have a value in the enumeration [false]"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "repositories.foo.url : Integer value found, but a string is required",
+   "repositories.foo.type : Does not have a value in the enumeration [\"vcs\",\"github\",\"git\",\"gitlab\",\"bitbucket\",\"git-bitbucket\",\"hg\",\"fossil\",\"perforce\",\"svn\",\"forgejo\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"path\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories.foo.type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories.foo.package : The property package is required",
+   "repositories.foo.type : Does not have a value in the enumeration [\"package\"]",
+   "repositories.foo : Failed to match at least one schema",
+   "repositories.foo : Failed to match all schemas",
+   "repositories.foo : Object value found, but a boolean is required",
+   "repositories.foo : Does not have a value in the enumeration [false]"
+  ]
+ },
+ "repo-name-only": {
+  "doc": {
+   "repositories": [
+    {
+     "name": "x"
+    }
+   ]
+  },
+  "lax": [
+   "repositories[0].type : The property type is required",
+   "repositories[0].url : The property url is required",
+   "repositories[0].package : The property package is required",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0].name : String value found, but a boolean is required",
+   "repositories[0].name : Does not have a value in the enumeration [false]"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "repositories[0].type : The property type is required",
+   "repositories[0].url : The property url is required",
+   "repositories[0].package : The property package is required",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0].name : String value found, but a boolean is required",
+   "repositories[0].name : Does not have a value in the enumeration [false]"
+  ]
+ },
+ "repo-vcs-no-url": {
+  "doc": {
+   "repositories": [
+    {
+     "type": "vcs"
+    }
+   ]
+  },
+  "lax": [
+   "repositories[0].url : The property url is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"composer\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"path\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories[0].package : The property package is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"package\"]",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0].type : String value found, but a boolean is required",
+   "repositories[0].type : Does not have a value in the enumeration [false]"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "repositories[0].url : The property url is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"composer\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"path\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"artifact\"]",
+   "repositories[0].type : Does not have a value in the enumeration [\"pear\"]",
+   "repositories[0].package : The property package is required",
+   "repositories[0].type : Does not have a value in the enumeration [\"package\"]",
+   "repositories[0] : Failed to match at least one schema",
+   "repositories[0].type : String value found, but a boolean is required",
+   "repositories[0].type : Does not have a value in the enumeration [false]"
+  ]
+ },
+ "require-int-constraint": {
+  "doc": {
+   "require": {
+    "a/b": 1
+   }
+  },
+  "lax": [
+   "require.a/b : Integer value found, but a string is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "require.a/b : Integer value found, but a string is required"
+  ]
+ },
+ "require-string": {
+  "doc": {
+   "name": "foo/bar",
+   "require": "x"
+  },
+  "lax": [
+   "require : String value found, but an object is required"
+  ],
+  "strict": [
+   "description : The property description is required",
+   "require : String value found, but an object is required"
+  ]
+ },
+ "scripts-int": {
+  "doc": {
+   "scripts": {
+    "x": 5
+   }
+  },
+  "lax": [],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required"
+  ]
+ },
+ "stability-enum": {
+  "doc": {
+   "minimum-stability": "nope"
+  },
+  "lax": [
+   "minimum-stability : Does not have a value in the enumeration [\"dev\",\"alpha\",\"beta\",\"rc\",\"RC\",\"stable\"]"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "minimum-stability : Does not have a value in the enumeration [\"dev\",\"alpha\",\"beta\",\"rc\",\"RC\",\"stable\"]"
+  ]
+ },
+ "strict-additional": {
+  "doc": {
+   "name": "foo/bar",
+   "description": "d",
+   "foo": 1
+  },
+  "lax": [],
+  "strict": [
+   "The property foo is not defined and the definition does not allow additional properties"
+  ]
+ },
+ "strict-empty": {
+  "doc": {},
+  "lax": [],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required"
+  ]
+ },
+ "strict-schema-key": {
+  "doc": {
+   "$schema": "x",
+   "foo": 1
+  },
+  "lax": [],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "The property foo is not defined and the definition does not allow additional properties"
+  ]
+ },
+ "support-uri-email": {
+  "doc": {
+   "support": {
+    "issues": "ftp//x",
+    "email": "a@b"
+   }
+  },
+  "lax": [
+   "support.email : Invalid email",
+   "support.issues : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "support.email : Invalid email",
+   "support.issues : Invalid URL format"
+  ]
+ },
+ "time-int": {
+  "doc": {
+   "time": 5,
+   "description": 5,
+   "abandoned": 5
+  },
+  "lax": [
+   "description : Integer value found, but a string is required",
+   "abandoned : Integer value found, but a boolean or a string is required",
+   "time : Integer value found, but a string is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : Integer value found, but a string is required",
+   "abandoned : Integer value found, but a boolean or a string is required",
+   "time : Integer value found, but a string is required"
+  ]
+ },
+ "timeout-string": {
+  "doc": {
+   "config": {
+    "process-timeout": "x"
+   }
+  },
+  "lax": [
+   "config.process-timeout : String value found, but an integer is required"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "config.process-timeout : String value found, but an integer is required"
+  ]
+ },
+ "type-int": {
+  "doc": {
+   "name": "foo/bar",
+   "type": 5
+  },
+  "lax": [
+   "type : Integer value found, but a string is required"
+  ],
+  "strict": [
+   "description : The property description is required",
+   "type : Integer value found, but a string is required"
+  ]
+ },
+ "unicode-email": {
+  "doc": {
+   "support": {
+    "email": "üñí@exämple.com"
+   }
+  },
+  "lax": [
+   "support.email : Invalid email"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "support.email : Invalid email"
+  ]
+ },
+ "uri-double-dot": {
+  "doc": {
+   "homepage": "http://example..com"
+  },
+  "lax": [
+   "homepage : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "homepage : Invalid URL format"
+  ]
+ },
+ "uri-port": {
+  "doc": {
+   "homepage": "https://example.com:99999/x"
+  },
+  "lax": [
+   "homepage : Invalid URL format"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "homepage : Invalid URL format"
+  ]
+ },
+ "version-newline": {
+  "doc": {
+   "version": "v1.0.0\n"
+  },
+  "lax": [],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required"
+  ]
+ },
+ "version-pattern": {
+  "doc": {
+   "version": "1.0.0-foo"
+  },
+  "lax": [
+   "version : Does not match the regex pattern ^[vV]?\\d+(?:[.-]\\d+){0,3}[._-]?(?:(?:[sS][tT][aA][bB][lL][eE]|[bB][eE][tT][aA]|[bB]|[rR][cC]|[aA][lL][pP][hH][aA]|[aA]|[pP][aA][tT][cC][hH]|[pP][lL]|[pP])(?:(?:[.-]?\\d+)*)?)?(?:[.-]?[dD][eE][vV]|\\.x-dev)?(?:\\+.*)?$|^dev-.*$"
+  ],
+  "strict": [
+   "name : The property name is required",
+   "description : The property description is required",
+   "version : Does not match the regex pattern ^[vV]?\\d+(?:[.-]\\d+){0,3}[._-]?(?:(?:[sS][tT][aA][bB][lL][eE]|[bB][eE][tT][aA]|[bB]|[rR][cC]|[aA][lL][pP][hH][aA]|[aA]|[pP][aA][tT][cC][hH]|[pP][lL]|[pP])(?:(?:[.-]?\\d+)*)?)?(?:[.-]?[dD][eE][vV]|\\.x-dev)?(?:\\+.*)?$|^dev-.*$"
+  ]
+ }
+}

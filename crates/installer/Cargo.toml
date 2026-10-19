@@ -1,0 +1,18 @@
+[package]
+name = "komposer-installer"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow = "1.0.104"
+bzip2 = "0.6.1"
+flate2 = "1.1.10"
+komposer-package = { version = "0.1.0", path = "../package" }
+komposer-semver = { version = "0.1.0", path = "../semver" }
+md-5 = "0.11.0"
+regex = "1.13.1"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+sha1 = "0.11.0"
+tar = "0.4.46"
+zip = { version = "9.0.5", default-features = false, features = ["deflate-flate2-zlib-rs"] }

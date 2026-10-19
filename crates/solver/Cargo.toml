@@ -1,0 +1,13 @@
+[package]
+name = "komposer-solver"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow = "1.0.104"
+indexmap = "2.14.2"
+komposer-package = { version = "0.1.0", path = "../package" }
+komposer-semver = { version = "0.1.0", path = "../semver" }
+regex = "1.13.1"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
