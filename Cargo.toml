@@ -4,7 +4,7 @@ resolver = "3"
 
 [workspace.package]
 edition = "2024"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 license = "MIT"
 repository = "https://github.com/atomesh-tech/komposer"
 homepage = "https://github.com/atomesh-tech/komposer"
@@ -28,12 +28,12 @@ chrono = { version = "0.4.45", default-features = false, features = ["alloc", "s
 clap = { version = "4.6.7", features = ["derive", "env", "wrap_help"] }
 fancy-regex = "0.19.2"
 indexmap = "2.14.2"
-komposer-autoload = { version = "0.1.0", path = "crates/autoload" }
-komposer-installer = { version = "0.1.0", path = "crates/installer" }
-komposer-package = { version = "0.1.0", path = "crates/package" }
-komposer-repository = { version = "0.1.0", path = "crates/repository" }
-komposer-semver = { version = "0.1.0", path = "crates/semver" }
-komposer-solver = { version = "0.1.0", path = "crates/solver" }
+komposer-autoload = { path = "crates/autoload" }
+komposer-installer = { path = "crates/installer" }
+komposer-package = { path = "crates/package" }
+komposer-repository = { path = "crates/repository" }
+komposer-semver = { path = "crates/semver" }
+komposer-solver = { path = "crates/solver" }
 md-5 = "0.11.0"
 regex = "1.13.1"
 serde_json = { version = "1.0.154", features = ["preserve_order"] }

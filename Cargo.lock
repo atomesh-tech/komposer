@@ -843,7 +843,7 @@ dependencies = [
 
 [[package]]
 name = "komposer"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "chrono",
@@ -864,7 +864,7 @@ dependencies = [
 
 [[package]]
 name = "komposer-autoload"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "indexmap",
@@ -877,7 +877,7 @@ dependencies = [
 
 [[package]]
 name = "komposer-installer"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "bzip2",
@@ -894,7 +894,7 @@ dependencies = [
 
 [[package]]
 name = "komposer-package"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "chrono",
@@ -905,7 +905,7 @@ dependencies = [
 
 [[package]]
 name = "komposer-repository"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "base64",
@@ -927,14 +927,14 @@ dependencies = [
 
 [[package]]
 name = "komposer-semver"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "regex",
 ]
 
 [[package]]
 name = "komposer-solver"
-version = "0.1.0"
+version = "0.1.0-rc.1"
 dependencies = [
  "anyhow",
  "indexmap",

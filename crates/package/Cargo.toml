@@ -7,6 +7,6 @@ license.workspace = true
 [dependencies]
 anyhow = "1.0.104"
 chrono = { version = "0.4.45", default-features = false, features = ["alloc", "std"] }
-komposer-semver = { version = "0.1.0", path = "../semver" }
+komposer-semver = { path = "../semver" }
 regex = "1.13.1"
 serde_json = { version = "1.0.154", features = ["preserve_order"] }
