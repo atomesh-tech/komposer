@@ -1,0 +1,61 @@
+{
+    "name": "acme/scripts-parity",
+    "description": "Script parity checks",
+    "type": "project",
+    "require": {
+        "psr/log": "^3.0",
+        "symfony/console": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/tool"
+    ],
+    "extra": {
+        "greeting": "hello"
+    },
+    "config": {
+        "process-timeout": 1
+    },
+    "scripts": {
+        "pre-operations-exec": [
+            "Acme\\Scripts::preOps",
+            "echo pre-ops shell"
+        ],
+        "pre-package-install": "echo installing",
+        "post-package-install": "Acme\\Scripts::packageInstalled",
+        "post-install-cmd": [
+            "@putenv ACME=yes",
+            "echo ACME=$ACME",
+            "@php -r 'echo ini_get(\"memory_limit\"), PHP_EOL;'",
+            "Acme\\Scripts::postInstall"
+        ],
+        "post-autoload-dump": "Acme\\Scripts::dump",
+        "show-args": "Acme\\Scripts::args",
+        "falsy": [
+            "Acme\\Scripts::returnsFalse",
+            "echo after-false"
+        ],
+        "stopper": [
+            "Acme\\Scripts::stops",
+            "echo not-reached"
+        ],
+        "boom": "Acme\\Scripts::boom",
+        "notice": "Acme\\Scripts::notice",
+        "greet": "Acme\\GreetCommand",
+        "tool": "bin/tool",
+        "slow": [
+            "Composer\\Config::disableProcessTimeout",
+            "sleep 2"
+        ],
+        "too-slow": "sleep 3",
+        "missing-class": "Acme\\Nope::run",
+        "ref-args": "@show-args x @additional_args y",
+        "ref-plain": "@show-args x",
+        "post-package-uninstall": "Acme\\Scripts::packageInstalled",
+        "pre-package-uninstall": "echo uninstalling"
+    }
+}

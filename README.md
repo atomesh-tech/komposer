@@ -12,8 +12,16 @@ between `komposer` and `composer` on the same project.
 ## Install
 
 ```sh
-cargo install --path .
+brew install atomesh-tech/tap/komposer
 ```
+
+Or with the installer script (macOS and Linux, into `~/.local/bin`):
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/atomesh-tech/komposer/releases/latest/download/komposer-installer.sh | sh
+```
+
+Or from source: `cargo install --git https://github.com/atomesh-tech/komposer komposer`.
 
 ## Use
 
